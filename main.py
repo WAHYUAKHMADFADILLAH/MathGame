@@ -1,6 +1,5 @@
 import random
 
-
 class MatematikaKuis:
     def __init__(self):
         self.operators = {
@@ -18,7 +17,7 @@ class MatematikaKuis:
 
     def tampilan_menu(self):
         menu = [
-            f"{key}. {self.operator_label(key)}" 
+            f"{key}. {self.operator_label(key)}"
             for key in self.operators
         ] + ['5. Exit']
         for item in menu:
@@ -45,11 +44,11 @@ class MatematikaKuis:
     def buat_soal_matematika(self, operator_key):
         num1 = random.randint(1, 20)
         num2 = random.randint(1, 20)
-        
+
         operator_simbol, operator_fungsi = self.operators[operator_key]
         problem = f"{num1} {operator_simbol} {num2}"
         solution = operator_fungsi(num1, num2)
-        
+
         return problem, solution
 
     def dapatkan_jawaban_pengguna(self, problem):
@@ -74,7 +73,7 @@ class MatematikaKuis:
 
         while True:
             pilihan = self.dapatkan_input_pengguna()
-            
+
             if pilihan == 5:
                 break
 
